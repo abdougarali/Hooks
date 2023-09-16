@@ -1,5 +1,7 @@
 import React from 'react';
-import {Card} from 'react-bootstrap';
+import {Card,Button} from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 function MovieCard({movie}) {
     const {title,description,posterURL,rating}=movie;
   return (
@@ -10,8 +12,14 @@ function MovieCard({movie}) {
         <Card.Title>{title}</Card.Title>
         <p>{description}</p>
         <p>note : {rating}</p>
-      </Card.Body>
+        <Button>
+        <Link to={`/trailer/${title}`} style={{color:"white"}}>Trailer</Link>
+        </Button>
+       </Card.Body>
     </Card>
+     
+    
+
     </div>
   )
 }
